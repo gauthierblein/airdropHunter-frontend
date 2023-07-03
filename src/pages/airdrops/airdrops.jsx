@@ -14,11 +14,11 @@ const Airdrops = () => {
     }, []);
     
     
-    const PF = "http://localhost:4000/uploads/";
+    const PF = "https://airdrophunter-api.adaptable.app/uploads/";
     const [allAirdrops, setAllAirdrops] = useState(null);
   
     useEffect(() => {
-        axios.get('http://localhost:4000').then((response) => {
+        axios.get('https://airdrophunter-api.adaptable.app').then((response) => {
               setAllAirdrops(response.data);
         });
         }, []);

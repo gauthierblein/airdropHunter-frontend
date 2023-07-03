@@ -12,11 +12,11 @@ function Post () {
   const id = params.id
   const [post, setPost] = useState('');
 
-  const PF = "http://localhost:4000/uploads/";
+  const PF = "https://airdrophunter-api.adaptable.app/uploads/";
 
   useEffect(() => {
       
-      axios.get(`http://localhost:4000/posts/${id}`)
+      axios.get(`https://airdrophunter-api.adaptable.app/posts/${id}`)
       .then((response) => {setPost(response.data); });
   }, []);
   console.log(post)

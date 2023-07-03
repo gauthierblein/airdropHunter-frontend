@@ -7,7 +7,7 @@ import './myPosts.css'
 
 
 function MyPosts() {
-    const PF = "http://localhost:4000/uploads/";
+    const PF = "https://airdrophunter-api.adaptable.app/uploads/";
 
     const [myPosts, setMyPosts] = useState(null);
     const [updatedPost, setUpdatedPost] = useState(
@@ -21,14 +21,14 @@ function MyPosts() {
     const handleShow = () => setShow(true);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/posts').then((response) => {
+        axios.get('https://airdrophunter-api.adaptable.app/posts').then((response) => {
           setMyPosts(response.data);
         });
       }, []);
 
       const deletePost = (id) => {
         console.log(id)
-        axios.delete(`http://localhost:4000/deletepost/${id}`)
+        axios.delete(`https://airdrophunter-api.adaptable.app/deletepost/${id}`)
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
         window.location.reload()
@@ -57,7 +57,7 @@ function MyPosts() {
       };
 
       const saveUpdatedPost = () => {
-        axios.put(`http://localhost:4000/updatepost/${updatedPost.id}`, updatedPost)
+        axios.put(`https://airdrophunter-api.adaptable.app/updatepost/${updatedPost.id}`, updatedPost)
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
         handleClose();

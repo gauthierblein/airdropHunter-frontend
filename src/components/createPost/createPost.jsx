@@ -29,11 +29,11 @@ export default function CreateArticle() {
       data.append("file", file);
       newPost.cover = filename;
       try {
-        await axios.post('http://localhost:4000/upload', data);
+        await axios.post('https://airdrophunter-api.adaptable.app/upload', data);
       } catch (err) {}
     }
     try {
-      const res = await axios.post('http://localhost:4000/create/posts', newPost);
+      const res = await axios.post('https://airdrophunter-api.adaptable.app/create/posts', newPost);
       alert("new post created")
       navigate(`/dashboard/${user}`);
     } catch (err) {}

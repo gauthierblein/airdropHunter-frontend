@@ -12,11 +12,11 @@ function Airdrop () {
   const id = params.id
   const [product, setProduct] = useState('');
 
-  const PF = "http://localhost:4000/uploads/";
+  const PF = "https://airdrophunter-api.adaptable.app/uploads/";
 
   useEffect(() => {
       
-      axios.get(`http://localhost:4000/airdrops/${id}`)
+      axios.get(`https://airdrophunter-api.adaptable.app/airdrops/${id}`)
       .then((response) => {setProduct(response.data); });
   }, []);
   
