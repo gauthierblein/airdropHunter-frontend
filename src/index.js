@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css';
+//Components
 import Home from './pages/home/home.jsx'
 import Airdrops from './pages/airdrops/airdrops'
 import News from './pages/news/news.jsx'

@@ -7,6 +7,7 @@ export default function Auth2() {
   const [username,setUsername] = useState('');
   const [password,setPassword] = useState('');
   const [redirect,setRedirect] = useState(false);
+  const [authenticated, setauthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
 
   async function login(ev) {
     ev.preventDefault();
@@ -19,6 +20,8 @@ export default function Auth2() {
     if (response.ok) {
       response.json().then(userInfo => {
         setRedirect(true);
+        setauthenticated(true);
+        localStorage.setItem("authenticated", true);
       });
     } else {
       alert('identifiants incorrects');
